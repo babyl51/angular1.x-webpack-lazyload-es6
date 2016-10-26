@@ -156,7 +156,7 @@ module.exports = function makeWebpackConfig(options) {
   var lessLoader = {
     test: /\.less$/,
     //less loader
-    loader: "style!css!postcss!less?strictMath&noIeCompat"
+    loader: "style!css!postcss!less?strictMath"
   }
 
   // Skip loading css in test mode
