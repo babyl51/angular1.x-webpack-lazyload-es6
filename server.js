@@ -1,5 +1,6 @@
 var webpack = require('webpack')
 var colors = require("colors")
+var ip = require('ip')
 var webpackDevMiddleware = require('webpack-dev-middleware')
 var webpackHotMiddleware = require('webpack-hot-middleware')
 var config = require('./webpack.config')
@@ -42,7 +43,6 @@ app.use(function (request, response, next) {
 })
 
 
-
 // if (request.url === "/error") {
 //   response.writeHead(200, { "Content-Type": "text/plain" });
 //   response.end("Welcome to the homepage!\n");
@@ -51,11 +51,12 @@ app.use(function (request, response, next) {
 // }
 
 
-app.listen(port, function (error) {
+var server=app.listen(port,ip.address(), function (error) {
   if (error) {
     console.error(error)
   } else {
-    console.info("==>🌍Listening on port %s. Open up http://localhost:%s/ in your browser.".green, port, port)
+    //console.info(`==>🌍Listening on http://localhost:${server.address().port}`.green)
+    console.info(`==>🌍Listening on http://${ip.address()}:${server.address().port}`.green)
   }
 })
 
