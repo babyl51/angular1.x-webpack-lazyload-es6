@@ -1,7 +1,12 @@
 ﻿
 /* CSS Document */
 @charset "utf-8";
-
+body{
+	overflow-x: hidden;
+}
+html{
+	background: white;
+}
 
 
 
