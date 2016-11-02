@@ -65,7 +65,7 @@ export default function initial($rootScope, $state, $stateParams, $location, $wi
         if (toState.position == true) {
             setTimeout(function () {
                 window.scrollTo(0, statePosition[toState.name + ToStringParams])
-            }, 0);
+            }, 500);
         } else {
             setTimeout(function () {
                 window.scrollTo(0, 0)
