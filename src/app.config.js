@@ -4,7 +4,7 @@
 routing.$inject = ['$stateProvider', '$urlRouterProvider', '$sceDelegateProvider', '$ocLazyLoadProvider'];
 
 export default function routing($stateProvider, $urlRouterProvider, $sceDelegateProvider, $ocLazyLoadProvider) {
-  //$locationProvider.html5Mode(true);
+  // $locationProvider.html5Mode(true);
   $sceDelegateProvider.resourceUrlWhitelist([
     'self',
     'http://127.0.0.1:8080/**',

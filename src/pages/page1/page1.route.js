@@ -1,4 +1,5 @@
-
+import './page1.html';
+import './page1.js'
 route.$inject = ['$stateProvider', '$urlRouterProvider', '$sceDelegateProvider', '$ocLazyLoadProvider'];
 
 export default function route($stateProvider, $urlRouterProvider, $sceDelegateProvider, $ocLazyLoadProvider) {
