@@ -11,20 +11,6 @@ export default function initial($rootScope, $state, $stateParams, $location, $wi
     //fastclick
     FastClick.attach(document.body);
 
-    //position:fixed recovery
-    $(function () {
-        var $body = $('body');
-        var $inputs = $('input');
-
-        $inputs.on('focus', function (e) {
-            $body.addClass('fixfixed');
-        });
-        $inputs.on('blur', function (e) {
-            $body.removeClass('fixfixed');
-        });
-    });
-
-
 
     //watch history.back event
     $rootScope.$on('$locationChangeStart', function () {
@@ -37,7 +23,7 @@ export default function initial($rootScope, $state, $stateParams, $location, $wi
         function (newLocation, oldLocation) {
             if ($rootScope.actualLocation == newLocation) {
                 $rootScope.pageClass.page = 'page prePage'
-            }else{
+            } else {
                 $rootScope.pageClass.page = 'page nextPage'
             }
         });
@@ -60,12 +46,26 @@ export default function initial($rootScope, $state, $stateParams, $location, $wi
         }
     });
     $rootScope.$on('$stateChangeSuccess', function (evt, toState, toParams, fromState, fromParams) {
+        //position:fixed recovery
+        $(function () {
+            var $body = $('body');
+            var $inputs = $('input');
+
+            $inputs.on('focus', function (e) {
+                $body.addClass('fixfixed');
+            });
+            $inputs.on('blur', function (e) {
+                $body.removeClass('fixfixed');
+            });
+        });
+
+
         $rootScope.showloading = false;
         var ToStringParams = JSON.stringify(toParams)
         if (toState.position == true) {
             setTimeout(function () {
                 window.scrollTo(0, statePosition[toState.name + ToStringParams])
-            }, 500);
+            }, 0);
         } else {
             setTimeout(function () {
                 window.scrollTo(0, 0)
