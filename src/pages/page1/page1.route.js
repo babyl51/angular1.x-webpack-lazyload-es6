@@ -6,9 +6,11 @@ export default function route($stateProvider, $urlRouterProvider, $sceDelegatePr
     $stateProvider
         .state('page1', {
             url: '/page1',
+            position: true,
+            sticky: true,
             views: {
                 'page1': {
-                    templateProvider: ['$q',function($q){
+                    templateProvider: ['$q', function ($q) {
                         return $q((resolve) => {
                             // lazy load the view
                             require.ensure([], () => { return resolve(require('./page1.html')) }, 'page1');
@@ -17,7 +19,7 @@ export default function route($stateProvider, $urlRouterProvider, $sceDelegatePr
                 }
             },
             resolve: {
-                loadMyCtrl: ['$q', '$ocLazyLoad',function($q, $ocLazyLoad){
+                loadMyCtrl: ['$q', '$ocLazyLoad', function ($q, $ocLazyLoad) {
                     return $q((resolve) => {
                         require.ensure([], () => {
                             // load whole module

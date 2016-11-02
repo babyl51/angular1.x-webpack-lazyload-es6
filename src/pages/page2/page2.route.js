@@ -5,6 +5,8 @@ export default function route($stateProvider, $urlRouterProvider, $sceDelegatePr
   $stateProvider
     .state('page2', {
       url: '/page2',
+      position: true,
+      sticky: true,
       views: {
         'page2': {
           templateProvider: ['$q',function($q){
