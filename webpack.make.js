@@ -188,7 +188,7 @@ module.exports = function makeWebpackConfig(options) {
     // Reference: https://github.com/webpack/extract-text-webpack-plugin
     // Extract css files
     // Disabled when in test mode or not in build mode
-    new ExtractTextPlugin('[name].css', {
+    new ExtractTextPlugin('[name].[hash:8].css', {
       disable: !BUILD || TEST
     }),
     new webpack.optimize.CommonsChunkPlugin({
