@@ -4,7 +4,7 @@ export default angular.module("operatorHeader", [])
         return {
             restrict: 'AE',
             scope: {
-                operate: '&operator'
+                operate: '&'
             },
             template: require('./operatorHeader.html'),
             transclude: true,
