@@ -4,7 +4,7 @@ import $ from 'jquery'
 initial.$inject = ['$rootScope', '$state', '$stateParams', '$location', '$window'];
 export default function initial($rootScope, $state, $stateParams, $location, $window) {
 
-    $rootScope.pageClass = {
+    $rootScope.cssClass = {
         page: ''
     }
 
@@ -23,9 +23,9 @@ export default function initial($rootScope, $state, $stateParams, $location, $wi
         function () { return $location.url() },
         function (newLocation, oldLocation) {
             if ($rootScope.actualLocation == newLocation) {
-                $rootScope.pageClass.page = 'page prePage'
+                $rootScope.cssClass.page = 'page prePage'
             } else {
-                $rootScope.pageClass.page = 'page nextPage'
+                $rootScope.cssClass.page = 'page nextPage'
             }
         });
 

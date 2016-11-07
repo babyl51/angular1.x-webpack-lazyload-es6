@@ -31,18 +31,4 @@ export default angular.module("historyBack", [])
 
 
 //组件数据类型
-            // [
-            //     {
-            //         "url": "http://192.168.0.215:8082/stream/6448300e-8249-49af-b948-1ecedeaeaa27.mp3",
-            //         "time":21
-            //     },
-            //     {
-            //         "url": "http://192.168.0.215:8082/stream/6448300e-8249-49af-b948-1ecedeaeaa27.mp3",
-            //         "time":21
-            //     },
-            //     {
-            //         "url": "http://192.168.0.215:8082/stream/6448300e-8249-49af-b948-1ecedeaeaa27.mp3",
-            //          "time":21
-            //     },
-            // ]
-
+           
