@@ -66,8 +66,6 @@ export default function initial($rootScope, $state, $stateParams, $location, $wi
         $rootScope.showloading = false;
         var ToStringParams = JSON.stringify(toParams);
         if (toState.position == true) {
-            console.log(statePosition);
-            console.log(statePosition[toState.name + ToStringParams])
             setTimeout(function () {
                 window.scrollTo(0, statePosition[toState.name + ToStringParams])
             }, 0);

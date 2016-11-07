@@ -6,7 +6,7 @@ var del = require('del');
 var inject = require('gulp-inject-string');
 
 
-var cdn = '';
+var cdn = 'http://192.168.10.40:8080/';
 
 
 gulp.task('clean:dist', function (cb) {
@@ -26,14 +26,14 @@ gulp.task('adaptBuilding', ['outputFile'], function () {
     var now = new Date;
     var version = now.getTime();
     //remove CDN and add version
-    gulp.src('./dist/index.html')
-        //.pipe(replace(cdn, ''))
-        .pipe(inject.after('<head>', '\n<info '
-            + 'version='+'"'+version+'"'+' '
-            + 'updata="['+cdn+'app.js,'+cdn+'app.css]"'
-            + ' />')
-        )
-        .pipe(gulp.dest('dist/'));
+    // gulp.src('./dist/index.html')
+    //     //.pipe(replace(cdn, ''))
+    //     .pipe(inject.after('<head>', '\n<info '
+    //         + 'version='+'"'+version+'"'+' '
+    //         + 'updata="['+cdn+'app.js,'+cdn+'app.css]"'
+    //         + ' />')
+    //     )
+    //     .pipe(gulp.dest('dist/'));
 
 
 });

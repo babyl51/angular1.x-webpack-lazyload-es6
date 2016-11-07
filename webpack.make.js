@@ -7,6 +7,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var colors = require("colors");
 var precss = require('precss');
+var path = require('path');
 
 
 module.exports = function makeWebpackConfig(options) {
@@ -247,5 +248,12 @@ module.exports = function makeWebpackConfig(options) {
       inline: true
     }
   };
+   config.resolve = {
+        root: [
+            path.resolve('./src/common/js'),
+            path.resolve('./src')
+        ],
+        extensions: ['', '.webpack.js', '.web.js', '.min.js', '.js', '.es6', '.json']
+    };
   return config;
 };
