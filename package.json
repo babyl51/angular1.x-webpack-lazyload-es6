@@ -5,6 +5,7 @@
   "scripts": {
     "server": "node server.js",
     "build": "gulp",
+    "build-app":"gulp build-app",
     "build:test": "webpack --config webpack.build.js --bail -p",
     "dev": "webpack-dev-server --history-api-fallback   --progress",
     "test": "karma start",
