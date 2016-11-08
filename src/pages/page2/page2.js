@@ -9,5 +9,4 @@ export default angular.module('page2', [uirouter, tabHeader])
       alert('say hi')
     }
   }])
-
   .name;

@@ -11,4 +11,8 @@ npm run server  进入开发模式
 npm run build 打包编译
 </li>
 
+<li>
+npm run build hybrid打包，增加update.json
+</li>
+
 </ol>
