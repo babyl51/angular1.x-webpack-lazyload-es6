@@ -10,8 +10,9 @@
 </head>
 <body>
   <div class="container">
+    <!--<div ui-view="page1" class={{cssClass.page}} ng-show="'page1' | includedByState"></div>-->
     <div ui-view="page1" class={{cssClass.page}} ng-show="'page1' | includedByState"></div>
-    <div ui-view="page2" class="page page-animation" ng-show="'page2' | includedByState"></div>
+    <div ui-view="page2" class={{cssClass.page}} ng-show="'page2' | includedByState"></div>
   </div>
 </body>
 </html>

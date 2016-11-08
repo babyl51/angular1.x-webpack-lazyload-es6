@@ -12,20 +12,13 @@ export default angular.module("tabHeader", [historyBack, operatorHeader])
             template: require('./tabHeader.html'),
             transclude: true,
             replace: true,
-            link: function (scope, element, attrs) {
+            link: {post:function (scope, element, attrs) {
+                var ngEle=angular.element(element);
                 var $container = $(element[0]);
-                var $occupy = $('<div></div>')
-                setTimeout(function () {
-                    $occupy.css("height", $container.outerHeight())
+                var $occupy = $('<div></div>')  
+                    $occupy.css("height", $container.height())
                     $container.after($occupy);
-                }, 0);
-
-
-            },
-            controller: function ($scope, $rootScope, $window) {
-
-
-            }
+            }}
         };
     }])
     .name;

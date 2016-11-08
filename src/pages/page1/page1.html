@@ -4,9 +4,9 @@
 	<operator-header>operator</operator-header>
 </tab-header>
 <content-item>
-	<div ng-controller="test1">page1</div>
+	<div ng-controller="test1">{{data.sharedata}}</div>
 
-	<div ng-controller="test2">222
+	<div ng-controller="test2">
 		<voice-Player voicelist='voicedata'></voice-Player>
 	</div>
 	<a ui-sref="page2">jump_to page2</a>
