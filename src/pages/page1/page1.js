@@ -1,13 +1,20 @@
 import uirouter from 'angular-ui-router';
-import voicePlayer from '../../components/voicePlayer/voicePlayer';
 import tabHeader from '../../components/tabHeader/tabHeader';
+import contentItem from '../../components/contentItem/contentItem';
 
-export default angular.module('page1', [uirouter, voicePlayer, tabHeader])
+import voicePlayer from '../../components/voicePlayer/voicePlayer';
+
+export default angular.module('page1', [uirouter, voicePlayer, tabHeader, contentItem])
     .service('API', ['$http', '$q', '$rootScope', function ($http, $q, $rootScope) {
         return {
             get_data: function () {
-                var config = { params: { userdata: 'stone' } };
-                return $http.get('/getlist/error', config)
+                var config = {
+                    params: { userdata: 'stone' },
+                    xsrfHeaderName: 'hello',
+                    xsrfCookieName:'test',
+                   
+                };
+                return $http.post('/getlist/error',{ data:'hello'}, config)
             }
         }
     }])
@@ -16,13 +23,13 @@ export default angular.module('page1', [uirouter, voicePlayer, tabHeader])
             sharedata: 'page1 data'
         }
     }])
-    .controller('test1', ['API','dataModel','$scope', function (API,dataModel,$scope) {
+    .controller('test1', ['API', 'dataModel', '$scope', function (API, dataModel, $scope) {
         API.get_data().then((response) => {
 
 
 
         })
-        $scope.data=dataModel;
+        $scope.data = dataModel;
 
 
 

@@ -13,11 +13,8 @@ export default angular.module("tabHeader", [historyBack, operatorHeader])
             transclude: true,
             replace: true,
             link: {post:function (scope, element, attrs) {
-                var ngEle=angular.element(element);
                 var $container = $(element[0]);
-                var $occupy = $('<div></div>')  
-                    $occupy.css("height", $container.height())
-                    $container.after($occupy);
+                $container.next('content-item').css('padding-top',$container.height())
             }}
         };
     }])

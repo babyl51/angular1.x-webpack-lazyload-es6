@@ -1,4 +1,5 @@
 import angular from 'angular';
+import $ from 'jquery';
 export default angular.module("contentItem", [])
     .directive('contentItem', [function () {
         return {
@@ -6,11 +7,12 @@ export default angular.module("contentItem", [])
             scope: {
                 operate: '&'
             },
-            template: require('./contentItem.html'),
-            transclude: true,
-            replace: true,
+            // template: require('./contentItem.html'),
+            // transclude: true,
+            // replace: true,
             link: function (scope, element, attrs) {
-               
+                var $element = $(element[0]);
+                $element.css('min-height',window.innerHeight)
             }
         };
     }])
