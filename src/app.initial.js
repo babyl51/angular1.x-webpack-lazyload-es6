@@ -13,7 +13,6 @@ export default function initial($rootScope, $state, $stateParams, $location, $wi
 
 
 
-
     //watch history.back event
     $rootScope.$on('$locationChangeStart', function () {
         // $rootScope.actualLocation = $location.path();
