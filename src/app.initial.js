@@ -13,14 +13,17 @@ export default function initial($rootScope, $state, $stateParams, $location, $wi
 
 
 
+
+
+
     //watch history.back event
-    $rootScope.$on('$locationChangeStart', function () {
+    $rootScope.$on('$locationChangeStart', function() {
         // $rootScope.actualLocation = $location.path();
         $rootScope.actualLocation = $location.url();
     });
     $rootScope.$watch(
-        function () { return $location.url() },
-        function (newLocation, oldLocation) {
+        function() { return $location.url() },
+        function(newLocation, oldLocation) {
             if ($rootScope.actualLocation == newLocation) {
                 $rootScope.cssClass.page = 'page prePage'
             } else {
@@ -35,7 +38,7 @@ export default function initial($rootScope, $state, $stateParams, $location, $wi
 
     //saving status for pages
     var statePosition = new Object();
-    $rootScope.$on('$stateChangeStart', function (evt, toState, toParams, fromState, fromParams) {
+    $rootScope.$on('$stateChangeStart', function(evt, toState, toParams, fromState, fromParams) {
         $rootScope.showloading = true
         var fromStringParams = JSON.stringify(fromParams)
         //record page's position
@@ -45,17 +48,17 @@ export default function initial($rootScope, $state, $stateParams, $location, $wi
             }
         }
     });
-    $rootScope.$on('$stateChangeSuccess', function (evt, toState, toParams, fromState, fromParams) {
+    $rootScope.$on('$stateChangeSuccess', function(evt, toState, toParams, fromState, fromParams) {
 
         //position:fixed recovery
-        $(function () {
+        $(function() {
             var $body = $('body');
             var $inputs = $('input');
 
-            $inputs.on('focus', function (e) {
+            $inputs.on('focus', function(e) {
                 $body.addClass('fixfixed');
             });
-            $inputs.on('blur', function (e) {
+            $inputs.on('blur', function(e) {
                 $body.removeClass('fixfixed');
             });
         });
@@ -65,11 +68,11 @@ export default function initial($rootScope, $state, $stateParams, $location, $wi
         $rootScope.showloading = false;
         var ToStringParams = JSON.stringify(toParams);
         if (toState.position == true) {
-            setTimeout(function () {
+            setTimeout(function() {
                 window.scrollTo(0, statePosition[toState.name + ToStringParams])
             }, 0);
         } else {
-            setTimeout(function () {
+            setTimeout(function() {
                 window.scrollTo(0, 0)
             }, 0);
         }
